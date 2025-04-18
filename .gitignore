@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+server/osv-data.zip
+server/vulnerabilities.db
+
+**/node_modules
+
 # testing
 /coverage
 

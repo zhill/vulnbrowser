@@ -1,12 +1,20 @@
 {
-  "dependencies": {
-    "express": "^4.18.2"
-  },
+  "name": "vuln-browser",
+  "version": "1.0.0",
+  "description": "Vulnerability Browser",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "start": "node server/index.js",
-    "build": "cd client && yarn run build"
+    "dev": "concurrently \"yarn workspace server start\" \"yarn workspace client start\"",
+    "build": "yarn workspace client build"
   },
   "license": "Apache-2.0",
-  "version": "0.0.0",
-  "packageManager": "yarn@3.3.1"
+  "packageManager": "yarn@3.3.1",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }
